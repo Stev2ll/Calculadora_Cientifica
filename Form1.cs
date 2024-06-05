@@ -373,39 +373,82 @@ namespace Encerder_pixel
 
         private void button11_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 350; i++)
-            {
-                for (int j = 0; j < 500; j++)
+            for(int i = 0; i < 233; i++)
+{
+                for (int j = 0; j < height; j++)
                 {
-                    int x = (int)((-0.73) * i + 255);
-                    int z = (int)((0.73) * i);
-                    pixelVextor.SetPixel(i, j, Color.FromArgb(x, x, z));
-                    pictureBox1.Image = pixelVextor;
+                    int r = 255 - (int)(255.0 / 233 * i);
+                    int g = (int)(255.0 / 233 * i);
+                    int b = 0;
+                    pixelVextor.SetPixel(i, j, Color.FromArgb(r, g, b));
                 }
             }
 
-            for (int i = 350; i < 700; i++)
+            for (int i = 233; i < 466; i++)
             {
-                for (int j = 0; j < 500; j++)
+                for (int j = 0; j < height; j++)
                 {
-                    int x1 = (int)((0.73) * i - 255);
-                    int y1 = 0;
-                    int z1 = (int)((-0.73) * i + 510);
-                    pixelVextor.SetPixel(i, j, Color.FromArgb(x1, y1, z1));
-                    pictureBox.Image = pixelVextor;
-
+                    int r = 0;
+                    int g = 255 - (int)(255.0 / 233 * (i - 233));
+                    int b = (int)(255.0 / 233 * (i - 233));
+                    pixelVextor.SetPixel(i, j, Color.FromArgb(r, g, b));
                 }
             }
-            /* color rojo 
-            for (int i = 467; i < 700; i++)
-            {
-                for (int j = 0; j < 500; j++)
-                {
-                    pixelVector.SetPixel(i, j, Color.FromArgb(255, 0, 0));
-                    pictureBox1.Image = pixelVector;
-                }
-            }*/
 
+            for (int i = 466; i < width; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    int r = (int)(255.0 / 233 * (i - 466));
+                    int g = 0;
+                    int b = 255 - (int)(255.0 / 233 * (i - 466));
+                    pixelVextor.SetPixel(i, j, Color.FromArgb(r, g, b));
+                }
+            }
+
+            pictureBox.Image = pixelVextor;
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Color[] paleta = new Color[16];
+
+            Color[] paleta0 = new[]
+            {
+                Color.Black,        //0
+                Color.Navy,         //1
+                Color.Green,        //2
+                Color.Aqua,         //3
+                Color.Red,          //4
+                Color.Purple,       //5
+                Color.Maroon,       //6
+                Color.LightGray,    //7
+                Color.DarkGray,     //8
+                Color.Blue,         //9
+                Color.Lime,         //10
+                Color.Silver,       //11
+                Color.Teal,         //12
+                Color.Fuchsia,      //13
+                Color.Yellow,       //14
+                Color.White         //15
+            };
+
+            int colorT;
+            Color c;
+
+
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {;
+                    colorT = (int)(Math.Pow(i,2) * i/5 + Math.Pow(j,2)*j/10) % 15;
+                    c = paleta0[colorT];
+                    pixelVextor.SetPixel(i, j, c);
+                }
+            }
+
+            pictureBox.Image = pixelVextor;
         }
 
         private void PintarFondoEjes()
