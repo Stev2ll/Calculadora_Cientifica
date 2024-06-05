@@ -1,0 +1,11 @@
+C:\Users\Steven\Downloads\COMPU CIENTIFICA\Encerder pixel\bin\Debug\Encerder pixel.exe.config
+C:\Users\Steven\Downloads\COMPU CIENTIFICA\Encerder pixel\bin\Debug\Encerder pixel.exe
+C:\Users\Steven\Downloads\COMPU CIENTIFICA\Encerder pixel\bin\Debug\Encerder pixel.pdb
+C:\Users\Steven\Downloads\COMPU CIENTIFICA\Encerder pixel\obj\Debug\Encerder pixel.csproj.AssemblyReference.cache
+C:\Users\Steven\Downloads\COMPU CIENTIFICA\Encerder pixel\obj\Debug\Encerder pixel.csproj.SuggestedBindingRedirects.cache
+C:\Users\Steven\Downloads\COMPU CIENTIFICA\Encerder pixel\obj\Debug\Encerder_pixel.Form1.resources
+C:\Users\Steven\Downloads\COMPU CIENTIFICA\Encerder pixel\obj\Debug\Encerder_pixel.Properties.Resources.resources
+C:\Users\Steven\Downloads\COMPU CIENTIFICA\Encerder pixel\obj\Debug\Encerder pixel.csproj.GenerateResource.cache
+C:\Users\Steven\Downloads\COMPU CIENTIFICA\Encerder pixel\obj\Debug\Encerder pixel.csproj.CoreCompileInputs.cache
+C:\Users\Steven\Downloads\COMPU CIENTIFICA\Encerder pixel\obj\Debug\Encerder pixel.exe
+C:\Users\Steven\Downloads\COMPU CIENTIFICA\Encerder pixel\obj\Debug\Encerder pixel.pdb
