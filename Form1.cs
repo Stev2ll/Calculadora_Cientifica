@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Encerder_pixel
 {
@@ -15,6 +16,28 @@ namespace Encerder_pixel
     {
         static readonly int width = 700;
         static readonly int height = 550;
+
+        Color[] paleta = new Color[16];
+
+        Color[] paleta0 = new[]
+        {
+                Color.Black,        //0
+                Color.Navy,         //1
+                Color.Green,        //2
+                Color.Aqua,         //3
+                Color.Red,          //4
+                Color.Purple,       //5
+                Color.Maroon,       //6
+                Color.LightGray,    //7
+                Color.DarkGray,     //8
+                Color.Blue,         //9
+                Color.Lime,         //10
+                Color.Silver,       //11
+                Color.Teal,         //12
+                Color.Fuchsia,      //13
+                Color.Yellow,       //14
+                Color.White         //15
+            };
 
         Bitmap pixelVextor = new Bitmap(width, height);
 
@@ -412,28 +435,6 @@ namespace Encerder_pixel
 
         private void button12_Click(object sender, EventArgs e)
         {
-            Color[] paleta = new Color[16];
-
-            Color[] paleta0 = new[]
-            {
-                Color.Black,        //0
-                Color.Navy,         //1
-                Color.Green,        //2
-                Color.Aqua,         //3
-                Color.Red,          //4
-                Color.Purple,       //5
-                Color.Maroon,       //6
-                Color.LightGray,    //7
-                Color.DarkGray,     //8
-                Color.Blue,         //9
-                Color.Lime,         //10
-                Color.Silver,       //11
-                Color.Teal,         //12
-                Color.Fuchsia,      //13
-                Color.Yellow,       //14
-                Color.White         //15
-            };
-
             int colorT;
             Color c;
 
@@ -451,6 +452,84 @@ namespace Encerder_pixel
             pictureBox.Image = pixelVextor;
         }
 
+        private void TiposTapetes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedItem = TiposTapetes.SelectedItem.ToString();
+            int colorT;
+            Color c;
+
+            switch (selectedItem)
+            {
+                case "Tapete1":
+                    for (int i = 0; i < width; i++)
+                    {
+                        for (int j = 0; j < height; j++)
+                        {
+                            colorT = (int)(Math.Pow(i, 2) + Math.Pow(j, 2)) % 15;
+                            c = paleta0[colorT];
+                            pixelVextor.SetPixel(i, j, c);
+                        }
+                    }
+                    break;
+                case "Tapete2":
+                    for (int i = 0; i < width; i++)
+                    {
+                        for (int j = 0; j < height; j++)
+                        {
+                            colorT = (int)(Math.Pow(i, 2) * i/5 + Math.Pow(j, 2) * j/10) % 15;
+                            c = paleta0[colorT];
+                            pixelVextor.SetPixel(i, j, c);
+                        }
+                    }
+                    break;
+                case "Tapete3":
+                    for (int i = 0; i < width; i++)
+                    {
+                        for (int j = 0; j < height; j++)
+                        {
+                            colorT = (int)(Math.Sin(i * 0.1) * Math.Cos(j * 0.1) * 7.5 + 7.5) % 15;
+                            c = paleta0[colorT];
+                            pixelVextor.SetPixel(i, j, c);
+                        }
+                    }
+                    break;
+                case "Tapete4":
+                    for (int i = 0; i < width; i++)
+                    {
+                        for (int j = 0; j < height; j++)
+                        {
+                            colorT = (int)(Math.Sqrt(i * j) % 15);
+                            c = paleta0[colorT];
+                            pixelVextor.SetPixel(i, j, c);
+                        }
+                    }
+                    break;
+                case "Tapete5":
+                    for (int i = 0; i < width; i++)
+                    {
+                        for (int j = 0; j < height; j++)
+                        {
+                            colorT = (int)((i * i + j * j) % 15);
+                            c = paleta0[colorT];
+                            pixelVextor.SetPixel(i, j, c);
+                        }
+                    }
+                    break;
+                // Agrega más casos según tus necesidades
+                default:
+                    for (int i = 0; i < width; i++)
+                    {
+                        for (int j = 0; j < height; j++)
+                        {
+                            colorT = (int)((Math.Abs(Math.Sin(i * 0.1) * 10) + Math.Abs(Math.Cos(j * 0.1) * 10)) % 15);
+                            c = paleta0[colorT];
+                            pixelVextor.SetPixel(i, j, c);
+                        }
+                    }
+                    break;
+            }
+                pictureBox.Image = pixelVextor;
+        }
         private void PintarFondoEjes()
         {
             Color fondo = Color.White;

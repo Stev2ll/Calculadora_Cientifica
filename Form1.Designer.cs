@@ -43,6 +43,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.paletacolores = new System.Windows.Forms.Button();
+            this.TiposTapetes = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -200,11 +201,29 @@
             this.paletacolores.UseVisualStyleBackColor = true;
             this.paletacolores.Click += new System.EventHandler(this.button12_Click);
             // 
+            // TiposTapetes
+            // 
+            this.TiposTapetes.FormattingEnabled = true;
+            this.TiposTapetes.Items.AddRange(new object[] {
+            "Tapete1",
+            "Tapete2",
+            "Tapete3",
+            "Tapete4",
+            "Tapete5",
+            "Tapete6"});
+            this.TiposTapetes.Location = new System.Drawing.Point(28, 521);
+            this.TiposTapetes.Name = "TiposTapetes";
+            this.TiposTapetes.Size = new System.Drawing.Size(122, 24);
+            this.TiposTapetes.TabIndex = 15;
+            this.TiposTapetes.Text = "Tapetes";
+            this.TiposTapetes.SelectedIndexChanged += new System.EventHandler(this.TiposTapetes_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1196, 727);
+            this.Controls.Add(this.TiposTapetes);
             this.Controls.Add(this.paletacolores);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -244,6 +263,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button paletacolores;
+        private System.Windows.Forms.ComboBox TiposTapetes;
     }
 }
 
